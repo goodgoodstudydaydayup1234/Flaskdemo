@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>商品列表页</title>
+	</head>
+	<body>
+		{% if userinfo %}
+		<h1>你好：<small>{{userinfo}}</small></h1>
+		{% endif %}
+		<h1>商品列表页</h1>
+		<ul>
+			{% for info in infoarray %}
+				<li><a href="/detial/{{info}}">{{info}}</a></li>
+			{% endfor %}
+		</ul>
+		<a href="/">首页</a>
+	</body>
+</html>

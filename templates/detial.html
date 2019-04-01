@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>商品详情页</title>
+	</head>
+	<body>
+		{% if userinfo %}
+		<h1>你好：<small>{{userinfo}}</small></h1>
+		{% endif %}
+		<h1>商品详情页</h1>
+		{{detial}}
+		<br>
+		<a href="/goods">列表页</a>	
+	</body>
+</html>

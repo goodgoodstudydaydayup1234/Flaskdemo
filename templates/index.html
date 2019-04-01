@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="../static/css/index.css"/>
+	</head>
+	
+	<body>
+	<h1>首页--<small>{{username}}</small></h1>
+		<!-- <a href="/regist">注册</a><a href="/login">登录</a> -->
+		<a href="http://127.0.0.1:5000/new">新闻</a>
+		<img src="../static/img/123.png" >
+		<ul>
+			{% if userinfo %}
+				<a href="#">你好：{{userinfo}}</a><br>
+				<a href="/goods">进入列表</a><br>
+				<a href="/quit">退出</a>
+			{% else %}
+				<a href="/login">登录</a><br>
+				<a href="/regist">注册</a>
+			{% endif %}
+		</ul>
+		{% if booklist %}
+			<p>图书列表</p>
+			<ul>
+				{% for book in booklist %}
+					<li><span>{{book.id}}</span> <span>{{book.name}}</span> <span>{{book.price}}</span></li>
+				{% endfor %}
+			</ul>
+
+			{% else %}
+				<p>没有图书列表</p>
+			{% endif %}
+	</body>
+</html>
